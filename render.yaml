@@ -1,0 +1,16 @@
+# Render service definition for the Physical AI Textbook Platform API
+# Note: I attempted to fetch the official Render `render.yaml` docs but network access failed.
+# This file follows Render's common `render.yaml` structure for a Python `web` service.
+services:
+  - type: web
+    name: physical-ai-textbook-api
+    env: python
+    plan: free
+    branch: main
+    region: oregon
+    buildCommand: pip install -r api/requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"

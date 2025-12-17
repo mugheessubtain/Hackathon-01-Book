@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="glowGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#c084fc"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Grid pattern (futuristic tech look) -->
+  <g opacity="0.1" stroke="#60a5fa" stroke-width="0.5">
+    <!-- Vertical lines -->
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="700" y1="0" x2="700" y2="400"/>
+    <!-- Horizontal lines -->
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+  </g>
+
+  <!-- Floating particles/nodes -->
+  <g filter="url(#glow2)">
+    <circle cx="150" cy="80" r="4" fill="#60a5fa" opacity="0.8"/>
+    <circle cx="680" cy="120" r="3" fill="#c084fc" opacity="0.7"/>
+    <circle cx="720" cy="280" r="5" fill="#06b6d4" opacity="0.8"/>
+    <circle cx="80" cy="320" r="3" fill="#7c3aed" opacity="0.6"/>
+    <circle cx="350" cy="50" r="4" fill="#2563eb" opacity="0.7"/>
+    <circle cx="550" cy="350" r="4" fill="#60a5fa" opacity="0.6"/>
+  </g>
+
+  <!-- Neural network connections -->
+  <g stroke="url(#glowGradient2)" stroke-width="1" opacity="0.3">
+    <line x1="150" y1="80" x2="350" y2="50"/>
+    <line x1="350" y1="50" x2="680" y2="120"/>
+    <line x1="80" y1="320" x2="550" y2="350"/>
+    <line x1="550" y1="350" x2="720" y2="280"/>
+  </g>
+
+  <!-- Large Robot Arm (Left side) -->
+  <g transform="translate(50, 100)">
+    <!-- Arm base -->
+    <rect x="0" y="180" width="120" height="80" rx="10" fill="url(#primaryGradient)" opacity="0.9"/>
+    <!-- Joint -->
+    <circle cx="60" cy="180" r="25" fill="url(#primaryGradient)"/>
+    <circle cx="60" cy="180" r="15" fill="#1e293b"/>
+    <circle cx="60" cy="180" r="8" fill="url(#glowGradient2)" filter="url(#glow2)"/>
+    <!-- Upper arm -->
+    <rect x="45" y="80" width="30" height="100" rx="8" fill="url(#primaryGradient)"/>
+    <!-- Shoulder joint -->
+    <circle cx="60" cy="80" r="20" fill="url(#primaryGradient)"/>
+    <circle cx="60" cy="80" r="12" fill="#1e293b"/>
+    <circle cx="60" cy="80" r="6" fill="#60a5fa" filter="url(#glow2)"/>
+    <!-- Gripper -->
+    <path d="M30 260 L45 290 L30 310 L45 310" fill="none" stroke="url(#primaryGradient)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M90 260 L75 290 L90 310 L75 310" fill="none" stroke="url(#primaryGradient)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Central AI Brain/Processor -->
+  <g transform="translate(320, 120)">
+    <!-- Outer hexagon -->
+    <polygon points="80,0 160,40 160,120 80,160 0,120 0,40" fill="url(#primaryGradient)" opacity="0.3"/>
+    <!-- Inner hexagon -->
+    <polygon points="80,20 140,50 140,110 80,140 20,110 20,50" fill="#1e293b" stroke="url(#glowGradient2)" stroke-width="2"/>
+    <!-- Core -->
+    <circle cx="80" cy="80" r="35" fill="url(#primaryGradient)" opacity="0.5"/>
+    <circle cx="80" cy="80" r="25" fill="url(#glowGradient2)" filter="url(#softGlow)"/>
+    <circle cx="80" cy="80" r="15" fill="#ffffff" opacity="0.9"/>
+    <!-- Neural paths from core -->
+    <line x1="80" y1="45" x2="80" y2="20" stroke="#60a5fa" stroke-width="2"/>
+    <line x1="110" y1="62" x2="130" y2="50" stroke="#c084fc" stroke-width="2"/>
+    <line x1="110" y1="98" x2="130" y2="110" stroke="#06b6d4" stroke-width="2"/>
+    <line x1="80" y1="115" x2="80" y2="140" stroke="#60a5fa" stroke-width="2"/>
+    <line x1="50" y1="98" x2="30" y2="110" stroke="#c084fc" stroke-width="2"/>
+    <line x1="50" y1="62" x2="30" y2="50" stroke="#06b6d4" stroke-width="2"/>
+    <!-- Small dots at path ends -->
+    <circle cx="80" cy="20" r="4" fill="#60a5fa" filter="url(#glow2)"/>
+    <circle cx="130" cy="50" r="4" fill="#c084fc" filter="url(#glow2)"/>
+    <circle cx="130" cy="110" r="4" fill="#06b6d4" filter="url(#glow2)"/>
+    <circle cx="80" cy="140" r="4" fill="#60a5fa" filter="url(#glow2)"/>
+    <circle cx="30" cy="110" r="4" fill="#c084fc" filter="url(#glow2)"/>
+    <circle cx="30" cy="50" r="4" fill="#06b6d4" filter="url(#glow2)"/>
+  </g>
+
+  <!-- Right side - Vision/Camera system -->
+  <g transform="translate(580, 80)">
+    <!-- Camera body -->
+    <rect x="20" y="40" width="140" height="100" rx="15" fill="url(#primaryGradient)" opacity="0.9"/>
+    <!-- Lens -->
+    <circle cx="90" cy="90" r="40" fill="#1e293b"/>
+    <circle cx="90" cy="90" r="32" fill="url(#primaryGradient)" opacity="0.5"/>
+    <circle cx="90" cy="90" r="24" fill="#1e293b"/>
+    <circle cx="90" cy="90" r="16" fill="url(#glowGradient2)" filter="url(#glow2)"/>
+    <circle cx="90" cy="90" r="8" fill="#ffffff"/>
+    <!-- Scan lines emanating from camera -->
+    <g stroke="#60a5fa" stroke-width="1" opacity="0.5">
+      <line x1="90" y1="130" x2="50" y2="200"/>
+      <line x1="90" y1="130" x2="90" y2="210"/>
+      <line x1="90" y1="130" x2="130" y2="200"/>
+    </g>
+    <!-- Detection box -->
+    <rect x="40" y="180" width="100" height="70" rx="5" fill="none" stroke="url(#glowGradient2)" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+    <text x="90" y="220" text-anchor="middle" fill="#60a5fa" font-size="12" font-family="monospace">DETECTING</text>
+    <!-- LED indicators -->
+    <circle cx="30" cy="50" r="4" fill="#10b981" filter="url(#glow2)"/>
+    <circle cx="150" cy="50" r="4" fill="#f59e0b" filter="url(#glow2)"/>
+  </g>
+
+  <!-- Bottom circuit board pattern -->
+  <g transform="translate(200, 340)" opacity="0.5">
+    <rect x="0" y="0" width="400" height="50" rx="5" fill="url(#primaryGradient)" opacity="0.2"/>
+    <line x1="20" y1="25" x2="380" y2="25" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="50" cy="25" r="6" fill="url(#glowGradient2)"/>
+    <circle cx="150" cy="25" r="6" fill="url(#glowGradient2)"/>
+    <circle cx="250" cy="25" r="6" fill="url(#glowGradient2)"/>
+    <circle cx="350" cy="25" r="6" fill="url(#glowGradient2)"/>
+    <!-- Vertical connections -->
+    <line x1="50" y1="25" x2="50" y2="10" stroke="#c084fc" stroke-width="1"/>
+    <line x1="150" y1="25" x2="150" y2="40" stroke="#c084fc" stroke-width="1"/>
+    <line x1="250" y1="25" x2="250" y2="10" stroke="#c084fc" stroke-width="1"/>
+    <line x1="350" y1="25" x2="350" y2="40" stroke="#c084fc" stroke-width="1"/>
+  </g>
+
+  <!-- ROS 2 Logo representation (left bottom) -->
+  <g transform="translate(30, 300)">
+    <circle cx="30" cy="30" r="25" fill="url(#primaryGradient)" opacity="0.8"/>
+    <text x="30" y="38" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">ROS</text>
+  </g>
+
+  <!-- NVIDIA Isaac representation (right bottom) -->
+  <g transform="translate(700, 300)">
+    <rect x="0" y="5" width="50" height="50" rx="8" fill="#76b900" opacity="0.9"/>
+    <text x="25" y="38" text-anchor="middle" fill="#000000" font-size="12" font-weight="bold">GPU</text>
+  </g>
+</svg>
